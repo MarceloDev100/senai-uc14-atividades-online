@@ -20,6 +20,7 @@ namespace ExoApi.Controllers
         public IActionResult Listar()
         {
             var projetos = _projetoRepository.Get();
+            
             return Ok(projetos);
         }
 
@@ -29,6 +30,7 @@ namespace ExoApi.Controllers
             var projeto = _projetoRepository.GetBy(id);
             
             if(projeto is null) return NotFound("Projeto não encontrado");
+
             return Ok(projeto);
         }
 
@@ -38,6 +40,7 @@ namespace ExoApi.Controllers
             if(projeto is null) return BadRequest("Dados incompletos");
 
              _projetoRepository.Create(projeto);
+
              return StatusCode(201);      
         }
 

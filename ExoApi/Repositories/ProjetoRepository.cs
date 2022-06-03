@@ -31,24 +31,20 @@ namespace ExoApi.Repositories
             _context.SaveChanges();
         }
 
-        public Projeto Update(int id, Projeto projeto)
+        public void Update(int id, Projeto projeto)
         {
             var projetoBanco = GetBy(id);
+      
+            projetoBanco.Titulo = projeto.Titulo;
+            projetoBanco.Status = projeto.Status;
+            projetoBanco.DataInicio = projeto.DataInicio;
+            projetoBanco.Tecnologia = projeto.Tecnologia;
+            projetoBanco.Requisito = projeto.Requisito;
+            projetoBanco.Area = projeto.Area;
 
-            if(projetoBanco != null)
-            {
-                projetoBanco.Titulo = projeto.Titulo;
-                projetoBanco.Status = projeto.Status;
-                projetoBanco.DataInicio = projeto.DataInicio;
-                projetoBanco.Tecnologia = projeto.Tecnologia;
-                projetoBanco.Requisito = projeto.Requisito;
-                projetoBanco.Area = projeto.Area;
-
-                _context.Update(projetoBanco);
-                _context.SaveChanges();
-            }
-
-            return projetoBanco;
+            _context.Update(projetoBanco);
+            _context.SaveChanges();
+            
         }
 
         public void Delete(int id)

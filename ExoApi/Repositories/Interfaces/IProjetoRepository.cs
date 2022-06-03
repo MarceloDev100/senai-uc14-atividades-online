@@ -7,7 +7,7 @@ namespace ExoApi.Repositories.Interfaces
          List<Projeto> Get();  
          Projeto GetBy(int id); 
          void Create(Projeto projeto);
-         Projeto Update(int id, Projeto projeto);
+         void Update(int id, Projeto projeto);
          void Delete(int id);
     }
 }
