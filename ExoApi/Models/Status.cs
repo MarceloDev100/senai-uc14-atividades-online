@@ -1,3 +1,4 @@
+
 namespace ExoApi.Models
 {
     public enum Status : int

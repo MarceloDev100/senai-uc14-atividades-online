@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "SBIftvwXRlK/11AZ9Y9tttusql+QRC9fotwc5d5EscKOJeoWczHiaJnMCVeQj76S9zfR1GdSM8l5r18FPtno9w==",
+  "dgSpecHash": "cXctPQ5acO7rcg9T5qL2+VZ7peFE7DESd2ZbOscmMsUwZaBoWFkd5zc+4NjuEzI+8gZEGSJgus9dcAVje6/cXQ==",
   "success": true,
-  "projectFilePath": "c:\\Users\\marce\\Desktop\\Api\\ExoApi\\exoapi.csproj",
+  "projectFilePath": "C:\\Users\\marce\\Desktop\\Api\\ExoApi\\exoapi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\marce\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\marce\\.nuget\\packages\\microsoft.data.sqlclient\\2.1.4\\microsoft.data.sqlclient.2.1.4.nupkg.sha512",
