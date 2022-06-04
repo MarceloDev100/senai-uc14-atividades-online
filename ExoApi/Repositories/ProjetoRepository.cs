@@ -35,12 +35,16 @@ namespace ExoApi.Repositories
         {
             var projetoBanco = GetBy(id);
       
-            projetoBanco.Titulo = projeto.Titulo;
-            projetoBanco.Status = projeto.Status;
-            projetoBanco.DataInicio = projeto.DataInicio;
-            projetoBanco.Tecnologia = projeto.Tecnologia;
-            projetoBanco.Requisito = projeto.Requisito;
-            projetoBanco.Area = projeto.Area;
+            projetoBanco.Titulo = projeto.Titulo ?? projetoBanco.Titulo;
+            projetoBanco.Status = string.IsNullOrEmpty(projeto.Status.ToString()) ?
+                                  projetoBanco.Status : projeto.Status;
+
+            projetoBanco.DataInicio = projeto.DataInicio != new DateTime() ? 
+                                      projeto.DataInicio : projetoBanco.DataInicio;
+
+            projetoBanco.Tecnologia = projeto.Tecnologia ?? projetoBanco.Tecnologia;
+            projetoBanco.Requisito  = projeto.Requisito ?? projetoBanco.Requisito;
+            projetoBanco.Area       = projeto.Area ?? projetoBanco.Area;
 
             _context.Update(projetoBanco);
             _context.SaveChanges();
