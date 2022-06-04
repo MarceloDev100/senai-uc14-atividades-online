@@ -1,0 +1,85 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>exoapi</name>
+    </assembly>
+    <members>
+        <member name="M:ExoApi.Controllers.LoginController.Login(ExoApi.ViewModels.LoginViewModel)">
+            <summary>
+            Permite realizar o login de um usuário no sistema.
+            </summary>
+            <param name="login">Entrada de dados de login</param>
+            <returns></returns>
+        </member>
+        <member name="M:ExoApi.Controllers.ProjetoController.Listar">
+            <summary>
+            Permite visualizar a lista de projetos cadastrados.
+            </summary>
+            <returns>Lista de projetos</returns>
+        </member>
+        <member name="M:ExoApi.Controllers.ProjetoController.BuscarPor(System.Int32)">
+            <summary>
+            Permite a consulta de um projeto específico.
+            </summary>
+            <param name="id">Identificador do projeto</param>
+            <returns>Retorna o projeto</returns>
+        </member>
+        <member name="M:ExoApi.Controllers.ProjetoController.Cadastrar(ExoApi.Models.Projeto)">
+            <summary>
+            Cadastra um projeto.
+            </summary>
+            <param name="projeto">Projeto a ser cadastrado</param>
+            <returns></returns>
+        </member>
+        <member name="M:ExoApi.Controllers.ProjetoController.Atualizar(System.Int32,ExoApi.Models.Projeto)">
+            <summary>
+            Atualiza um projeto específico.
+            </summary>
+            <param name="id">Identificador do projeto</param>
+            <param name="projeto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ExoApi.Controllers.ProjetoController.Excluir(System.Int32)">
+            <summary>
+            Deleta um projeto específico, de acordo com o nível (tipo) de permissão do usuário.
+            </summary>
+            <param name="id">Identificador do projeto</param>
+            <returns></returns>
+        </member>
+        <member name="M:ExoApi.Controllers.UsuarioController.Listar">
+            <summary>
+            Permite visualizar a lista de usuários cadastrados.
+            </summary>
+            <returns>Lista de usuários</returns>
+        </member>
+        <member name="M:ExoApi.Controllers.UsuarioController.BuscarPor(System.Int32)">
+            <summary>
+            Permite a consulta de um usuário específico.
+            </summary>
+            <param name="id">Identificador do usuário</param>
+            <returns></returns>
+        </member>
+        <member name="M:ExoApi.Controllers.UsuarioController.Cadastrar(ExoApi.Models.Usuario)">
+            <summary>
+            Cadastra um usuário.
+            </summary>
+            <param name="usuario">Usuário a ser cadastrado</param>
+            <returns></returns>
+        </member>
+        <member name="M:ExoApi.Controllers.UsuarioController.Atualizar(System.Int32,ExoApi.Models.Usuario)">
+            <summary>
+            Atualiza um usuário específico.
+            </summary>
+            <param name="id">Identificador do usuário</param>
+            <param name="usuario"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ExoApi.Controllers.UsuarioController.Excluir(System.Int32)">
+            <summary>
+            Deleta um usuário específico.
+            </summary>
+            <param name="id">Identificador do usuário</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

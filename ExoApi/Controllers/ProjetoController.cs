@@ -4,10 +4,11 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ExoApi.Controllers
-{
+{  
     [Produces("application/json")]
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class ProjetoController : ControllerBase
     {
         private readonly IProjetoRepository _projetoRepository;
@@ -17,6 +18,10 @@ namespace ExoApi.Controllers
             _projetoRepository = projetoRepository;
         }
 
+        /// <summary>
+        /// Permite visualizar a lista de projetos cadastrados.
+        /// </summary>
+        /// <returns>Lista de projetos</returns>
         [HttpGet]
         public IActionResult Listar()
         {
@@ -32,6 +37,11 @@ namespace ExoApi.Controllers
             }
         }
 
+        /// <summary>
+        /// Permite a consulta de um projeto específico.
+        /// </summary>
+        /// <param name="id">Identificador do projeto</param>
+        /// <returns>Retorna o projeto</returns>
         [HttpGet("{id}")]
         public IActionResult BuscarPor(int id)
         {
@@ -49,6 +59,11 @@ namespace ExoApi.Controllers
             }
         }
 
+        /// <summary>
+        /// Cadastra um projeto.
+        /// </summary>
+        /// <param name="projeto">Projeto a ser cadastrado</param>
+        /// <returns></returns>
         [HttpPost]
         public IActionResult Cadastrar(Projeto projeto)
         {
@@ -66,6 +81,13 @@ namespace ExoApi.Controllers
             }
         }
 
+        
+        /// <summary>
+        /// Atualiza um projeto específico.
+        /// </summary>
+        /// <param name="id">Identificador do projeto</param>
+        /// <param name="projeto"></param>
+        /// <returns></returns>
         [HttpPut("{id}")]
         public IActionResult Atualizar(int id, Projeto projeto)
         {
@@ -85,6 +107,11 @@ namespace ExoApi.Controllers
             }
         }
 
+        /// <summary>
+        /// Deleta um projeto específico, de acordo com o nível (tipo) de permissão do usuário.
+        /// </summary>
+        /// <param name="id">Identificador do projeto</param>
+        /// <returns></returns>
         [Authorize(Roles = "1")]
         [HttpDelete("{id}")]
         public IActionResult Excluir(int id)

@@ -1,7 +1,9 @@
+using System.Reflection;
 using ExoApi.Contexts;
 using ExoApi.Repositories;
 using ExoApi.Repositories.Interfaces;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -47,7 +49,21 @@ builder.Services.AddTransient<IProjetoRepository, ProjetoRepository>();
 builder.Services.AddTransient<IUsuarioRepository, UsuarioRepository>();
 
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(doc => {
+   doc.SwaggerDoc("v1", new OpenApiInfo{
+        Version = "v1",
+        Title = "UC14 - SENAI-SP - Projeto ExoApi",
+        Description = "Modelo simplificado de uma Web API para gerenciar projetos.",
+        Contact = new OpenApiContact 
+        { 
+            Name = "Aluno: Marcelo Marques." ,
+            Url = new Uri("https://github.com/MarceloDev100")
+        }    
+   });
+     var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+     var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+     doc.IncludeXmlComments(xmlPath);
+});
 
 var app = builder.Build();
 
@@ -55,7 +71,10 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
-    app.UseSwaggerUI();
+    app.UseSwaggerUI(c => {
+        c.SwaggerEndpoint("/swagger/v1/swagger.json", "ExoApi");
+        c.RoutePrefix = string.Empty;
+    });
 }
 
 app.UseHttpsRedirection();

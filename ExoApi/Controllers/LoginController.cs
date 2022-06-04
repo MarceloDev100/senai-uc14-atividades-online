@@ -20,6 +20,11 @@ namespace ExoApi.Controllers
             _usuarioRepository = usuarioRepository;
         }
 
+        /// <summary>
+        /// Permite realizar o login de um usuário no sistema.
+        /// </summary>
+        /// <param name="login">Entrada de dados de login</param>
+        /// <returns></returns>
         [HttpPost]
         public IActionResult Login(LoginViewModel login)
         {

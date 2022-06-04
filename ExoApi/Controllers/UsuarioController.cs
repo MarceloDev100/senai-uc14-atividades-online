@@ -1,5 +1,6 @@
 using ExoApi.Models;
 using ExoApi.Repositories.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ExoApi.Controllers
@@ -7,6 +8,7 @@ namespace ExoApi.Controllers
     [Produces("application/json")]
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class UsuarioController : ControllerBase
     {
         private readonly IUsuarioRepository _usuarioRepository;
@@ -16,6 +18,10 @@ namespace ExoApi.Controllers
             _usuarioRepository = usuarioRepository;
         }
 
+        /// <summary>
+        /// Permite visualizar a lista de usuários cadastrados.
+        /// </summary>
+        /// <returns>Lista de usuários</returns>
         [HttpGet]
         public IActionResult Listar()
         {
@@ -31,6 +37,11 @@ namespace ExoApi.Controllers
             }
         }
 
+        /// <summary>
+        /// Permite a consulta de um usuário específico.
+        /// </summary>
+        /// <param name="id">Identificador do usuário</param>
+        /// <returns></returns>
         [HttpGet("{id}")]
         public IActionResult BuscarPor(int id)
         {
@@ -48,6 +59,11 @@ namespace ExoApi.Controllers
             }
         }
 
+        /// <summary>
+        /// Cadastra um usuário.
+        /// </summary>
+        /// <param name="usuario">Usuário a ser cadastrado</param>
+        /// <returns></returns>
         [HttpPost]
         public IActionResult Cadastrar(Usuario usuario)
         {
@@ -65,6 +81,12 @@ namespace ExoApi.Controllers
             }
         }
 
+        /// <summary>
+        /// Atualiza um usuário específico.
+        /// </summary>
+        /// <param name="id">Identificador do usuário</param>
+        /// <param name="usuario"></param>
+        /// <returns></returns>
         [HttpPut("{id}")]
         public IActionResult Atualizar(int id, Usuario usuario)
         {
@@ -84,6 +106,11 @@ namespace ExoApi.Controllers
             }
         }
 
+        /// <summary>
+        /// Deleta um usuário específico.
+        /// </summary>
+        /// <param name="id">Identificador do usuário</param>
+        /// <returns></returns>
         [HttpDelete("{id}")]
         public IActionResult Excluir(int id)
         {
