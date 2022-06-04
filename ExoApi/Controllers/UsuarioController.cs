@@ -19,53 +19,88 @@ namespace ExoApi.Controllers
         [HttpGet]
         public IActionResult Listar()
         {
-            var usuarios = _usuarioRepository.Get();
+            try
+            {
+                var usuarios = _usuarioRepository.Get();
 
-            return Ok(usuarios);
+                return Ok(usuarios);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
 
         [HttpGet("{id}")]
         public IActionResult BuscarPor(int id)
         {
-            var usuario = _usuarioRepository.GetBy(id);
+            try
+            {
+                var usuario = _usuarioRepository.GetBy(id);
 
-            if(usuario is null) return NotFound("Usuário não encontrado");
+                if (usuario is null) return NotFound("Usuário não encontrado");
 
-            return Ok(usuario);
+                return Ok(usuario);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         [HttpPost]
         public IActionResult Cadastrar(Usuario usuario)
         {
-             if(usuario is null) return BadRequest("Dados incompletos");
+            try
+            {
+                if (usuario is null) return BadRequest("Dados incompletos");
 
-             _usuarioRepository.Create(usuario);
+                _usuarioRepository.Create(usuario);
 
-             return StatusCode(201);
+                return StatusCode(201);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         [HttpPut("{id}")]
         public IActionResult Atualizar(int id, Usuario usuario)
         {
-            var usuarioBuscado = _usuarioRepository.GetBy(id);
+            try
+            {
+                var usuarioBuscado = _usuarioRepository.GetBy(id);
 
-            if(usuarioBuscado is null) return BadRequest("Usuário não identificado");
+                if (usuarioBuscado is null) return BadRequest("Usuário não identificado");
 
-            _usuarioRepository.Update(id, usuario);
+                _usuarioRepository.Update(id, usuario);
 
-            return StatusCode(204);
+                return StatusCode(204);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         [HttpDelete("{id}")]
         public IActionResult Excluir(int id)
         {
-            var usuarioBuscado = _usuarioRepository.GetBy(id);
+            try
+            {
+                var usuarioBuscado = _usuarioRepository.GetBy(id);
 
-            if(usuarioBuscado is null) return BadRequest("Usuário não identificado");
+                if (usuarioBuscado is null) return BadRequest("Usuário não identificado");
 
-            _usuarioRepository.Delete(id);
+                _usuarioRepository.Delete(id);
 
-            return StatusCode(204);
+                return StatusCode(204);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
     }
 }

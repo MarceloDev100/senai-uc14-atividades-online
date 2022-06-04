@@ -9,7 +9,7 @@ namespace ExoApi.Controllers
     [ApiController]
     public class ProjetoController : ControllerBase
     {
-        private readonly IProjetoRepository _projetoRepository; 
+        private readonly IProjetoRepository _projetoRepository;
 
         public ProjetoController(IProjetoRepository projetoRepository)
         {
@@ -19,53 +19,88 @@ namespace ExoApi.Controllers
         [HttpGet]
         public IActionResult Listar()
         {
-            var projetos = _projetoRepository.Get();
+            try
+            {
+                var projetos = _projetoRepository.Get();
 
-            return Ok(projetos);
+                return Ok(projetos);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
 
         [HttpGet("{id}")]
         public IActionResult BuscarPor(int id)
         {
-            var projeto = _projetoRepository.GetBy(id);
-            
-            if(projeto is null) return NotFound("Projeto não encontrado");
+            try
+            {
+                var projeto = _projetoRepository.GetBy(id);
 
-            return Ok(projeto);
+                if (projeto is null) return NotFound("Projeto não encontrado");
+
+                return Ok(projeto);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         [HttpPost]
         public IActionResult Cadastrar(Projeto projeto)
         {
-            if(projeto is null) return BadRequest("Dados incompletos");
+            try
+            {
+                if (projeto is null) return BadRequest("Dados incompletos");
 
-             _projetoRepository.Create(projeto);
+                _projetoRepository.Create(projeto);
 
-             return StatusCode(201);      
+                return StatusCode(201);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         [HttpPut("{id}")]
         public IActionResult Atualizar(int id, Projeto projeto)
         {
-            var projetoBuscado = _projetoRepository.GetBy(id);
+            try
+            {
+                var projetoBuscado = _projetoRepository.GetBy(id);
 
-            if(projetoBuscado is null) return BadRequest("Projeto não identificado");
+                if (projetoBuscado is null) return BadRequest("Projeto não identificado");
 
-            _projetoRepository.Update(id, projeto);
+                _projetoRepository.Update(id, projeto);
 
-            return StatusCode(204);
+                return StatusCode(204);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         [HttpDelete("{id}")]
         public IActionResult Excluir(int id)
         {
-            var projetoBuscado = _projetoRepository.GetBy(id);
+            try
+            {
+                var projetoBuscado = _projetoRepository.GetBy(id);
 
-            if(projetoBuscado is null) return BadRequest("Projeto não identificado");
+                if (projetoBuscado is null) return BadRequest("Projeto não identificado");
 
-            _projetoRepository.Delete(id);
+                _projetoRepository.Delete(id);
 
-            return StatusCode(204);
+                return StatusCode(204);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
     }
 }
