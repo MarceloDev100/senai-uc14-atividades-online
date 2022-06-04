@@ -20,7 +20,7 @@ namespace ExoApi.Controllers
         public IActionResult Listar()
         {
             var projetos = _projetoRepository.Get();
-            
+
             return Ok(projetos);
         }
 

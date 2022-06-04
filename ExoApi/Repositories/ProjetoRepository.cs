@@ -27,7 +27,7 @@ namespace ExoApi.Repositories
 
          public void Create(Projeto projeto)
         {
-            _context.Add(projeto);
+            _context.Projetos.Add(projeto);
             _context.SaveChanges();
         }
 
@@ -46,7 +46,7 @@ namespace ExoApi.Repositories
             projetoBanco.Requisito  = projeto.Requisito ?? projetoBanco.Requisito;
             projetoBanco.Area       = projeto.Area ?? projetoBanco.Area;
 
-            _context.Update(projetoBanco);
+            _context.Projetos.Update(projetoBanco);
             _context.SaveChanges();
             
         }
@@ -55,11 +55,9 @@ namespace ExoApi.Repositories
         {
             var projeto = GetBy(id);
 
-            if(projeto != null)
-            {
-              _context.Projetos.Remove(projeto);
-              _context.SaveChanges();
-            }
+            _context.Projetos.Remove(projeto);
+            _context.SaveChanges();
+            
         }
     }
 }

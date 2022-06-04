@@ -11,6 +11,7 @@ builder.Services.AddControllers();
 
 builder.Services.AddScoped<ProjetoContext, ProjetoContext>();
 builder.Services.AddTransient<IProjetoRepository, ProjetoRepository>();
+builder.Services.AddTransient<IUsuarioRepository, UsuarioRepository>();
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
