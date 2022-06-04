@@ -52,5 +52,10 @@ namespace ExoApi.Repositories.Interfaces
            _context.Usuarios.Remove(usuario);
            _context.SaveChanges();
         }
+
+        public Usuario Login(string email, string senha)
+        {
+            return _context.Usuarios.FirstOrDefault(x => x.Email == email && x.Senha == senha);
+        }
     }
 }

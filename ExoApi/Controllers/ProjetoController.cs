@@ -1,5 +1,6 @@
 using ExoApi.Models;
 using ExoApi.Repositories.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ExoApi.Controllers
@@ -84,6 +85,7 @@ namespace ExoApi.Controllers
             }
         }
 
+        [Authorize(Roles = "1")]
         [HttpDelete("{id}")]
         public IActionResult Excluir(int id)
         {

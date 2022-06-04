@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "XctQeNr4L8M9i91eN8BfurjZSX9JgDFYTr6EIW/LdryJxmbh+qUpDj2iFPIl8QxbAXFavhfbE8STInJqU2rlsA==",
+  "dgSpecHash": "y5hGy+2HzAK7RObtpHTTAe/4Lnvjqk4mFZEoXoRJDmfmMsfIS7nI5PAQOqqMpMY4wRNLX5GiHcg9Bc0SINrnug==",
   "success": true,
-  "projectFilePath": "c:\\Users\\marce\\Desktop\\Api\\ExoApi\\exoapi.csproj",
+  "projectFilePath": "C:\\Users\\marce\\Desktop\\Api\\ExoApi\\exoapi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\marce\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\6.0.5\\microsoft.aspnetcore.authentication.jwtbearer.6.0.5.nupkg.sha512",
     "C:\\Users\\marce\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",

@@ -57,3 +57,4 @@ C:\Users\marce\Desktop\Api\ExoApi\obj\Debug\net6.0\refint\exoapi.dll
 C:\Users\marce\Desktop\Api\ExoApi\obj\Debug\net6.0\exoapi.pdb
 C:\Users\marce\Desktop\Api\ExoApi\obj\Debug\net6.0\exoapi.genruntimeconfig.cache
 C:\Users\marce\Desktop\Api\ExoApi\obj\Debug\net6.0\ref\exoapi.dll
+C:\Users\marce\Desktop\Api\ExoApi\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

@@ -9,5 +9,6 @@ namespace ExoApi.Repositories.Interfaces
         void Create(Usuario usuario);
         void Update(int id, Usuario usuario);
         void Delete(int id);
+        Usuario Login(string email, string senha);
     }
 }
