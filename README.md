@@ -201,39 +201,41 @@
 
 -------------
 
-### 📁 Organização do projeto
+## 📁 Organização do projeto
 
 Possui resumidamente:
 
-✔️ Arquivo Program.cs: Contém as configurações de autenticação JWT Bearer, do Swagger, de restrição de acesso (Cors), além de controllers, serviços e outros aspectos necessários ao pleno funcionamento da aplicação.
+✔️ __Arquivo Program.cs__:  Contém as configurações de autenticação JWT Bearer, do Swagger, de restrição de acesso (Cors), além de controllers, serviços e outros aspectos necessários ao pleno funcionamento da aplicação.
 
-✔️ Pasta Models: Contém as entidades envolvidas no projeto, descritas com os seus respectivos campos, carregando informações entre as camadas. Nesta pasta também foi criada uma enumeração de dados para detalhamento do status do projeto (0 = criado, 1 = Andamento, 2 = Finalizado).
+✔️ __Pasta Models__:  Contém as entidades envolvidas no projeto, descritas com os seus respectivos campos, carregando informações entre as camadas. Nesta pasta também foi criada uma enumeração de dados para detalhamento do status do projeto (0 = criado, 1 = Andamento, 2 = Finalizado).
 
-✔️ Pasta Repositories: Contém as classes do repositório e uma subpasta interfaces, com os arquivos IProjetoRepository e IUsuarioRepository que deverão ser implementados por meio de um contrato com as respectivas classes relacionadas, denominadas ProjetoRepository e UsuarioRepository. As classes do repositório fazem acesso e manipulação de dados no banco.
+✔️ __Pasta Repositories__:  Contém as classes do repositório e uma subpasta interfaces, com os arquivos IProjetoRepository e IUsuarioRepository que deverão ser implementados por meio de um contrato com as respectivas classes relacionadas, denominadas ProjetoRepository e UsuarioRepository. As classes do repositório fazem acesso e manipulação de dados no banco.
 
-✔️ Pasta Controllers: Contém os classes denominadas controladores que representam os endpoints da aplicação, recebendo as requisições do usuário e reconduzindo o fluxo para camadas inferiores a fim de obter acesso aos recursos de acordo com o nível de permissão que um usuário pode ter. Podem retornar um status code específico em caso de sucesso, falha ou outros motivos.
+✔️ __Pasta Controllers__:  Contém os classes denominadas controladores que representam os endpoints da aplicação, recebendo as requisições do usuário e reconduzindo o fluxo para camadas inferiores a fim de obter acesso aos recursos de acordo com o nível de permissão que um usuário pode ter. Podem retornar um status code específico em caso de sucesso, falha ou outros motivos.
 
-✔️ Pasta Contexts: Contém a classe ProjetoContext que possui as configurações para conexão com o banco. Essa classe de contexto também administra os objetos entidades durante o tempo de execução, o que inclui preencher objetos com dados de um banco de dados, controlar alterações, e persistir dados para o banco de dados.
+✔️ __Pasta Contexts__:  Contém a classe ProjetoContext que possui as configurações para conexão com o banco. Essa classe de contexto também administra os objetos entidades durante o tempo de execução, o que inclui preencher objetos com dados de um banco de dados, controlar alterações, e persistir dados para o banco de dados.
 
-✔️ Pasta ViewModels: Contém uma classe, a qual irá carregar apenas os dados necessários para login de usuário (e-mail e senha) dentro da classe LoginController, que por sua vez, delega atribuições para a classe do repositório UsuarioRepository , permitindo a consulta no banco para realizar a autenticação.
+✔️ __Pasta ViewModels__:  Contém uma classe, a qual irá carregar apenas os dados necessários para login de usuário (e-mail e senha) dentro da classe LoginController, que por sua vez, delega atribuições para a classe do repositório UsuarioRepository , permitindo a consulta no banco para realizar a autenticação.
 
-✔️ Arquivo exoapi.csproj : Contém basicamente as configurações do framework alvo, além de referências à instalações de pacotes ou dependências do projeto com suas respectivas versões.
+✔️ __Arquivo exoapi.csproj__:  Contém basicamente as configurações do framework alvo, além de referências à instalações de pacotes ou dependências do projeto com suas respectivas versões.
 
-### 🔧 Pré-requisitos do projeto
+## 🔧 Pré-requisitos do projeto
 
 ✔️ .NET SDK 6.0.
+
 ✔️ Insomnia ou Postman (opcionais).
 
-### ⚙️ Tecnologias utilizadas
+## ⚙️ Tecnologias utilizadas
 
 ✔️ .NET 6.0 (linguagem C#).
+
 ✔️ Visual Studio Code.
 
 ## 💻 Sistema Operacional utilizado
 
 ✔️ Windows 10.
 
-### 🏃 Execução da aplicação
+## 🏃 Execução da aplicação
 
 👉 Após baixar o projeto em zip e fazer a sua descompactação, clicar com o botão direito na pasta do projeto e em seguida em abrir com o Code.
 
@@ -248,7 +250,7 @@ git clone https://github.com/MarceloDev100/senai-uc14-atividades-online.git
 ```
 Em seguida, o mesmo procedimento anterior deve-se ser feito para execução do projeto no VS Code.
 
-### 👪 Contribuidores
+## 👪 Contribuidores
 
 Aluno SENAI-SP : Marcelo Marques.
 
