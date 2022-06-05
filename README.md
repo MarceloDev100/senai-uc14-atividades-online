@@ -195,6 +195,6 @@
 
 ![RetornoExclusaoUsuario](https://user-images.githubusercontent.com/88597534/172067225-00dad5b2-3ad1-4115-8213-78abcd975620.png)
 
-👉 Visualização do usuário deletado (Usuário com id = 2, não existe mais).
+👉 Visualização dos usuários cadastrados (Usuário com id = 2, não existe mais).
 
 ![ListarUsuarioDeletado](https://user-images.githubusercontent.com/88597534/172067231-5138efda-e45b-4046-b8ab-8a4447faaf90.png)
