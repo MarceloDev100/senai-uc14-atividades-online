@@ -172,7 +172,7 @@
 
 👉 Entrada de dados (Atualização de usuário com id = 2).
 
-![EntradaDadosBuscarUsuario](https://user-images.githubusercontent.com/88597534/172066816-bba0deb3-8d22-4972-9056-2732b08030df.png)
+![EntradaDadosAtualizarUsuario](https://user-images.githubusercontent.com/88597534/172075028-20ae4ac7-fecb-4d9f-ac81-df45f9d3f400.png)
 
 👍 Resposta com status code 204 (No content - requisição bem sucedida).
 
@@ -218,6 +218,7 @@ Possui resumidamente:
 ✔️ __Pasta ViewModels__:  Contém uma classe, a qual irá carregar apenas os dados necessários para login de usuário (e-mail e senha) dentro da classe LoginController, que por sua vez, delega atribuições para a classe do repositório UsuarioRepository , permitindo a consulta no banco para realizar a autenticação.
 
 ✔️ __Arquivo exoapi.csproj__:  Contém basicamente as configurações do framework alvo, além de referências à instalações de pacotes ou dependências do projeto com suas respectivas versões.
+
 
 ## 🔧 Pré-requisitos do projeto
 
