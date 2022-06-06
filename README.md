@@ -211,7 +211,7 @@ Possui resumidamente:
 
 ✔️ __Pasta Repositories__:  Contém as classes do repositório e uma subpasta interfaces, com os arquivos IProjetoRepository e IUsuarioRepository que deverão ser implementados por meio de um contrato com as respectivas classes relacionadas, denominadas ProjetoRepository e UsuarioRepository. As classes do repositório fazem acesso e manipulação de dados no banco.
 
-✔️ __Pasta Controllers__:  Contém os classes denominadas controladores que representam os endpoints da aplicação, recebendo as requisições do usuário e reconduzindo o fluxo para camadas inferiores a fim de obter acesso aos recursos de acordo com o nível de permissão que um usuário pode ter. Podem retornar um status code específico em caso de sucesso, falha ou outros motivos.
+✔️ __Pasta Controllers__:  Contém os classes denominadas controladores que representam os endpoints da aplicação, recebendo as requisições do usuário de acordo com o seu nível de permissão e reconduzindo o fluxo de forma a realizar a comunicação com a camada do repositório, a fim de obter acesso aos recursos disponíveis. Podem retornar um status code específico em caso de sucesso, falha ou outros motivos.
 
 ✔️ __Pasta Contexts__:  Contém a classe ProjetoContext que possui as configurações para conexão com o banco. Essa classe de contexto também administra os objetos entidades durante o tempo de execução, o que inclui preencher objetos com dados de um banco de dados, controlar alterações, e persistir dados para o banco de dados.
 
@@ -223,6 +223,8 @@ Possui resumidamente:
 ## 🔧 Pré-requisitos do projeto
 
 ✔️ .NET SDK 6.0.
+
+✔️ Visual Studio Code.
 
 ✔️ Insomnia ou Postman (opcionais).
 
@@ -240,7 +242,7 @@ Possui resumidamente:
 
 👉 Após baixar o projeto em zip e fazer a sua descompactação, clicar com o botão direito na pasta do projeto e em seguida em abrir com o Code.
 
-👉 Em seguida, no canto direito , acessar o ícone run and debug (Ctrl + Shift + D) e no botão superior .NET Core Launch (web) para executar a aplicação. Uma janela do Swagger deverá ser aberta para que possam ser feitas as requisições necessárias.
+👉 Em seguida, no painel esquerdo, acessar o ícone run and debug (Ctrl + Shift + D) e no botão superior .NET Core Launch (web) para executar a aplicação. Uma janela do Swagger deverá ser aberta para que possam ser feitas as requisições necessárias.
 
 __OU__ 
 
