@@ -251,7 +251,7 @@ __OU__
 ```
 git clone https://github.com/MarceloDev100/senai-uc14-atividades-online.git
 ```
-Em seguida, o mesmo procedimento anterior deve-se ser feito para execução do projeto no VS Code.
+Em seguida, o mesmo procedimento anterior deve ser feito para execução do projeto no VS Code.
 
 ## 👪 Contribuidores
 
